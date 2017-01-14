@@ -47,7 +47,6 @@ export class ContactDetailsComponent implements OnChanges {
       if (error) {
         throw error
       };
-
       let g = details.selectAll(".arc")
         .data(pie(data))
         .enter()
@@ -72,7 +71,7 @@ export class ContactDetailsComponent implements OnChanges {
       .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
       .attr("dy", ".35em")
       .attr("fill", "white")
-      .text(function(d) { return d.data.time; });
+      .text(function(d) { return d.data.period; });
     });
   }
 
