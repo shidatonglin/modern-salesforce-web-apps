@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>{{title}}</h1>
+  <div class="grid">
+    <div>
+      <h2>My Contacts</h2>
+      <label>Find contact</label>
+      <input [(ngModel)]="searchTerm" placeholder="Search for names">
+      <ul>
+        <li
+          *ngFor="let contact of contacts | search:searchTerm"
+          [class.selected]="contact === selectedContact"
+          (click)="onSelect(contact)">
+          <span class="badge">{{contact.id}}</span> {{contact.name}}
+        </li>
+      </ul>
+    </div>
+    <contact-details [contact]="selectedContact"></contact-details>
+  </div>
+  <svg id="chart"></svg>
+</div>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>NgAppTest</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+    .container {
+      margin: 3.5em auto;
+      padding: 0 1em;
+      max-width: 75em;
+      color: #222;
+      font-family: 'Roboto', sans-serif;
+    }
+    h1 {
+      font-size: 3.5em;
+      font-weight: 300;
+    }
+    h2 {
+      font-size: 1.25em;
+      font-weight: 400;
+    }
+    li, label, input {
+      font-size: 0.875em;
+    }
+    li {
+      line-height: 1.9;
+    }
+    input {
+      border: none;
+      outline: none;
+      border-bottom: 2px solid #999;
+      margin-left: 1.25em;
+      padding-left: 0.5em;
+      padding-bottom: 0.5em;
+    }
+    input:focus{
+      border-bottom: 2px solid #8e44ad;
+    }
+    .grid {
+      display: flex;
+    }
+    .grid > div {
+      flex-grow: 1;
+    }
+    svg {
+      margin-top: 1.25em;
+    }
+  </style>
+</head>
+<body>
+  <app-root>Loading...</app-root>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script>
+    var sforce = {
+      apex: {
+        execute: function() {
+          var contacts = [{
+            name: "Madeleine Black",
+            id: 11,
+            score: 22,
+          }, {
+            name: "Frank Pullman",
+            id: 12,
+            score: 15,
+          }, {
+            name: "Samantha Hill",
+            id: 13,
+            score: 12,
+          }, {
+            name: "Sam Ince",
+            id: 14,
+            score: 23,
+          }, {
+            name: "Joseph Hughes",
+            id: 15,
+            score: 22,
+          }, {
+            name: "Karen Randall",
+            id: 16,
+            score: 25,
+          }, {
+            name: "Benjamin Manning",
+            id: 17,
+            score: 30,
+          }, {
+            name: "Katherine Wright",
+            id: 18,
+            score: 17,
+          }, {
+            name: "Thomas Vance",
+            id: 19,
+            score: 12,
+          }]
+          return JSON.stringify(contacts);
+        }
+      }
+    },
+    resources = 'http://localhost:4200/assets/csv';
+  </script>
+</body>
+</html>

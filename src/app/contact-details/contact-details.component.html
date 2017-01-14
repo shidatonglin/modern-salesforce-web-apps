@@ -1,0 +1,5 @@
+<div *ngIf="contact">
+  <h2>{{contact.name}} details!</h2>
+  <label>Edit contact:</label>
+  <input [(ngModel)]="contact.name" placeholder="Name">
+</div>
