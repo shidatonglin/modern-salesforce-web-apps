@@ -1,0 +1,71 @@
+<apex:page standardStylesheets="false" sidebar="false"
+ showHeader="false" applyBodyTag="false" applyHtmlTag="false"
+ docType="html-5.0" controller="ngAppTest">
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <title>NgAppTest</title>
+      <base href="/" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+        .container {
+        margin: 3.5em auto;
+        padding: 0 1em;
+        max-width: 75em;
+        color: #222;
+        font-family: 'Roboto', sans-serif;
+        }
+        h1 {
+        font-size: 3.5em;
+        font-weight: 300;
+        }
+        h2 {
+        font-size: 1.25em;
+        font-weight: 400;
+        }
+        li, label, input {
+        font-size: 0.875em;
+        }
+        li {
+        line-height: 1.9;
+        }
+        input {
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #999;
+        margin-left: 1.25em;
+        padding-left: 0.5em;
+        padding-bottom: 0.5em;
+        }
+        input:focus{
+        border-bottom: 2px solid #8e44ad;
+        }
+        .grid {
+        display: flex;
+        }
+        .grid > div {
+        flex-grow: 1;
+        }
+        svg {
+        margin-top: 1.25em;
+        }
+      </style>
+    </head>
+    <body>
+      <!-- App Root -->
+      <app-root>Loading...</app-root><!-- / App Root -->
+      <!-- Scripts -->
+      <apex:includeScript value="/soap/ajax/21.0/connection.js" />
+      <apex:includeScript value="/soap/ajax/21.0/apex.js" />
+      <script type="text/javascript">
+        sforce.connection.sessionId = "{!$Api.Session_ID}";
+        var resources = "{!URLFOR($Resource.ContactDetails)}";
+      </script>
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+      <script src="{!URLFOR($Resource.ngAppTest, 'inline.js')}"></script>
+      <script src="{!URLFOR($Resource.ngAppTest, 'styles.b52d2076048963e7cbfd.bundle.js')}"></script>
+      <script src="{!URLFOR($Resource.ngAppTest, 'main.8f4f2da7623eedf58683.bundle.js')}"></script><!-- / Scripts -->
+    </body>
+  </html>
+</apex:page>
